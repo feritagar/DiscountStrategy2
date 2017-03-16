@@ -9,13 +9,32 @@ package discountstrategy;
  *
  * @author FA
  */
-public class QuantityDiscount implements Discount {
+public class QuantityDiscount implements DiscountStrategy {
 
+    private double qtyDiscount;
+    
+    public QuantityDiscount(double qtyDiscount) {
+        setQtyDiscount(qtyDiscount);
+    }
+    
+    public final double getQtyDiscount() {
+        return qtyDiscount;
+    }
+    
+    public final void setQtyDiscount(double qtyDiscount) {
+        this.qtyDiscount = qtyDiscount;
+    }
+    
     @Override
     public double getDiscount(double retailCost, double quantity) {
-        double discount = 0;
-        return discount;
-
+        if (quantity >= 5) {
+            qtyDiscount = retailCost * quantity * .25;
+        } else if (quantity == 3) {
+            qtyDiscount = retailCost * quantity * .20;
+        } else {
+            qtyDiscount = 0.15;
+        }
+        return qtyDiscount;
     }
-
+    
 }

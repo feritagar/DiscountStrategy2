@@ -9,11 +9,7 @@ package discountstrategy;
  *
  * @author FA
  */
-public class NoDiscount implements DiscountStrategy {
+public interface DiscountStrategy {
 
-    @Override
-    public double getDiscount(double retailCost, double quantity) {
-
-        return retailCost * quantity * 0;
-    }
+    public abstract double getDiscount(double retailCost, double quantity);
 }

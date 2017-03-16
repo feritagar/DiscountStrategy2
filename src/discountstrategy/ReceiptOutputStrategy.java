@@ -9,7 +9,6 @@ package discountstrategy;
  *
  * @author FA
  */
-public interface Discount {
-
-    public abstract double getDiscount(double retailCost, double quantity);
+public interface ReceiptOutputStrategy {
+   
 }

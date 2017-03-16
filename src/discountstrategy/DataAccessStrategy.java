@@ -9,6 +9,9 @@ package discountstrategy;
  *
  * @author FA
  */
-public interface ReceiptOutput {
-   
+public interface DataAccessStrategy {
+
+    public abstract Customer findCustomer(final String customerId);
+
+    public abstract Product findProduct(final String productId);
 }

@@ -9,12 +9,12 @@ package discountstrategy;
  *
  * @author FA
  */
-public class FlatDiscount implements Discount {
-
+public class FlatDiscount implements DiscountStrategy {
+       private final double flatDiscountPercentage = 0.10;
     @Override
     public double getDiscount(double retailCost, double quantity) {
-        double discount = 0;
-        return discount;
+        
+        return retailCost * quantity * flatDiscountPercentage;
 
     }
 

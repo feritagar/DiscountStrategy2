@@ -11,30 +11,34 @@ package discountstrategy;
  */
 class Receipt {
 
-    private Customer customer;
-    private Product product;
+    private Customer customerId;
+    private Product productId;
+    private InMemoryDataAccess database;
     private LineItem[] lineItems;
 
-    public Receipt(Customer customer, Product product, LineItem[] lineItems) {
-        setCustomer(customer);
-        setProduct(product);
-        setLineItems(lineItems);
+    public Receipt(Customer customerId, Product productId) {
+        setCustomer(customerId);
+        setProduct(productId);
+    }
+
+    Receipt(String customerId, String productId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public final Customer getCustomer() {
-        return customer;
+        return customerId;
     }
 
-    public final void setCustomer(Customer customer) {
-        this.customer = customer;
+    public final void setCustomer(Customer customerId) {
+        this.customerId = customerId;
     }
 
     public final Product getProduct() {
-        return product;
+        return productId;
     }
 
-    public final void setProduct(Product product) {
-        this.product = product;
+    public final void setProduct(Product productId) {
+        this.productId = productId;
     }
 
     public final LineItem[] getLineItems() {

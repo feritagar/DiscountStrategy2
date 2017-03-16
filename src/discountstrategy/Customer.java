@@ -44,14 +44,7 @@ public class Customer {
             JOptionPane.showMessageDialog(null,
                     "Error: Customer id is not in the database");
             System.exit(0);
-
         }
         this.customerId = customerId;
     }
-    
-    public final Customer findCustomer(final String custId){
-        return null;
-        
-    } 
-
 }

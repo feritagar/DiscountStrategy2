@@ -12,13 +12,15 @@ package discountstrategy;
 public class LineItem {
 
     private Product product;
+    private Customer customer;
     private int quanity;
-    private double total;
+    private double subTotal;
 
-    public LineItem(Product product, int quanity, double total) {
+    public LineItem(Product product, Customer customer, int quanity) {
         setProduct(product);
+        setCustomer(customer);
         setQuanity(quanity);
-        setTotal(total);
+
     }
 
     public final Product getProduct() {
@@ -39,13 +41,20 @@ public class LineItem {
         this.quanity = quanity;
     }
 
-    public final double getTotal() {
-        return total;
+    public final double getSubTotal() {
+        return subTotal;
     }
 
-    public final void setTotal(double total) {
-        this.total = total;
-    }
-    
+    public final void setTotal(double subTotal) {
 
+        this.subTotal = product.getRetailCost() * quanity;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public final void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

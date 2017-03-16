@@ -14,9 +14,9 @@ public class Product {
     private String productName;
     private String productId;
     private double retailCost;
-    private Discount discount;
+    private DiscountStrategy discount;
     
-    public Product(String productName, String productId, double retailCost, Discount discount) {
+    public Product(String productName, String productId, double retailCost, DiscountStrategy discount) {
         setProductName(productName);
         setProductId(productId);
         setRetailCost(retailCost);
@@ -48,11 +48,11 @@ public class Product {
         this.retailCost = retailCost;
     }
     
-    public final Discount getDiscount() {
+    public final DiscountStrategy getDiscount() {
         return discount;
     }
     
-    public final void setDiscount(Discount discount) {
+    public final void setDiscount(DiscountStrategy discount) {
         this.discount = discount;
     }
     

@@ -17,10 +17,11 @@ public class PosTerminal {
         setReceipt(receipt);
     }
    
-    public final void startSale(String string) {
+    public final void startSale(String customerId) {
+        receipt = new Receipt("", "A101");
     }
 
-    public final void addItemToSale(String productId, int i) {
+    public final void addItemToSale(String productId, double quantity) {
     }
 
     public final void endSale() {
